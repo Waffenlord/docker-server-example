@@ -16,7 +16,7 @@ func newServer(addr string) *APIServer {
 	}
 }
 
-func (s *APIServer) Run() error {
+func (s *APIServer) Run() {
 	router := http.NewServeMux()
 	router.HandleFunc("GET /", handlePage)
 
@@ -29,7 +29,7 @@ func (s *APIServer) Run() error {
 
 	log.Printf("Server has started %s", s.Addr)
 
-	return server.ListenAndServe()
+	log.Fatal(server.ListenAndServe())
 }
 
 

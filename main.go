@@ -1,7 +1,10 @@
 package main
 
+import "os"
 
 func main() {
-	server := newServer(":8080")
+	port := os.Getenv("PORT")
+
+	server := newServer(port)
 	server.Run()
 }

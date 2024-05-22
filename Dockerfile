@@ -23,6 +23,8 @@ RUN GOOS=linux GOARCH=amd64 go build -o /docker-server-example
 # https://docs.docker.com/reference/dockerfile/#expose
 EXPOSE 8080
 
+ENV PORT :8080
+
 # Run
 CMD ["/docker-server-example"]
 
